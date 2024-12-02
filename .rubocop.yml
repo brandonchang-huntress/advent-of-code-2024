@@ -1,0 +1,88 @@
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+  SuggestExtensions: false
+
+Layout/BlockAlignment:
+  EnforcedStyleAlignWith: start_of_block
+
+# Configuration parameters: Width, AllowedPatterns, IgnoredPatterns.
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  Enabled: true
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Naming/BlockForwarding:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'app/views/**/*'
+    - 'db/data_schema.rb'
+
+Style/NumericLiterals:
+  Exclude:
+    - "db/data_schema.rb"
+
+Style/RedundantStringEscape:
+  Exclude:
+    # The detector files include comments with Elasticsearch queries. Sometimes
+    # these queries have escapes that Rubocop thinks are redundant, but are
+    # semantically meaningful in the context of the query.
+    - "app/models/detectors/**/*.rb"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/WhileUntilModifier:
+  Enabled: false
+
+# YOU CAN PRY MY EMOJOIS FROM MY COLD DEAD HANDS
+Style/AsciiComments:
+  Enabled: false
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
+
+# This impacts useful code patterns like below resulting in an unsafe autocorrect
+# Before: params[:foo]&.to_i || 1 # => 1
+# After: prams[:foo].to_i || 1 # => 0
+Lint/RedundantSafeNavigation:
+  Enabled: false
+
+Style/ArgumentsForwarding:
+  UseAnonymousForwarding: false
