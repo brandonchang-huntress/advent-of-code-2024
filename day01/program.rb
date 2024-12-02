@@ -2,7 +2,6 @@
 
 file = File.read("input.txt")
 
-
 arr1 = []
 arr2 = []
 file.split("\n").each do |line|
